@@ -1,30 +1,45 @@
-# Secrets
+# Environment
 .env
 .env.*
+*.local
+
+# Credentials
 *.pem
 *.key
 *.crt
+*.p12
+*.pfx
 
-# Build
+# Python
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+
+# Node
 node_modules/
 dist/
+build/
+
+# Coverage
 coverage/
-
-# Docker
-postgres-data/
-playwright-report/
-
-# Runtime traces
-runtime-traces/raw/
-runtime-traces/private/
-
-# Videos
-*.mp4
-*.webm
-
-# Screenshots
-playwright-report/
-test-results/
+htmlcov/
+*.coverage
 
 # IDE
 .vscode/settings.json
+.idea/
+
+# Generated Assets
+playwright-report/
+test-results/
+tmp/
+cache/
+
+# Database
+*.sqlite
+*.db
+
+# OS
+.DS_Store
+Thumbs.db

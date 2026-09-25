@@ -1,7 +1,6 @@
 # Environment
 .env
 .env.*
-!.env.example
 
 # Python
 __pycache__/
@@ -11,22 +10,27 @@ __pycache__/
 # Node
 node_modules/
 dist/
+build/
 
-# Docker
-postgres-data/
-
-# Playwright
-playwright-report/
-test-results/
-trace.zip
-
-# Runtime traces
-runtime-traces/raw/
-runtime-traces/private/
+# Coverage
+coverage/
+htmlcov/
 
 # Logs
 *.log
 
+# OS
+.DS_Store
+Thumbs.db
+
 # IDE
 .vscode/
 .idea/
+
+# Temporary
+tmp/
+cache/
+
+# Database
+*.sqlite
+*.db
