@@ -1,0 +1,32 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+.pytest_cache/
+.venv/
+
+# Node
+node_modules/
+dist/
+
+# Docker
+postgres-data/
+
+# Playwright
+playwright-report/
+test-results/
+trace.zip
+
+# Runtime traces
+runtime-traces/raw/
+runtime-traces/private/
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/

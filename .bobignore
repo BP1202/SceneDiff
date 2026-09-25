@@ -1,0 +1,30 @@
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+*.crt
+
+# Build
+node_modules/
+dist/
+coverage/
+
+# Docker
+postgres-data/
+playwright-report/
+
+# Runtime traces
+runtime-traces/raw/
+runtime-traces/private/
+
+# Videos
+*.mp4
+*.webm
+
+# Screenshots
+playwright-report/
+test-results/
+
+# IDE
+.vscode/settings.json
