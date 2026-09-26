@@ -39,16 +39,15 @@ def create_app() -> FastAPI:
         version="0.1.0",
         description="AI-powered runtime behavior diff platform.",
         lifespan=lifespan,
-        # Disable default /docs and /redoc in production.
-        docs_url="/docs" if settings.APP_ENV != "production" else None,
-        redoc_url="/redoc" if settings.APP_ENV != "production" else None,
+        docs_url="/docs" if settings.DOCS_ENABLED else None,
+        redoc_url="/redoc" if settings.DOCS_ENABLED else None,
     )
 
     # --- Middleware (outermost first) ----------------------------------------
     # CORS must be added before RequestID so it applies to preflight responses.
     application.add_middleware(
         CORSMiddleware,
-        allow_origins=settings.ALLOWED_ORIGINS.split(","),
+        allow_origins=settings.allowed_origins_list,
         allow_credentials=False,
         allow_methods=["*"],
         allow_headers=["*"],

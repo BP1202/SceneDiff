@@ -22,8 +22,11 @@ assert _settings.DATABASE_URL is not None  # noqa: S101
 
 async_engine = create_async_engine(
     _settings.DATABASE_URL,
-    echo=_settings.APP_ENV == "development",
+    echo=_settings.DB_ECHO,
     pool_pre_ping=True,
+    pool_size=_settings.DB_POOL_SIZE,
+    max_overflow=_settings.DB_MAX_OVERFLOW,
+    pool_timeout=_settings.DB_POOL_TIMEOUT,
 )
 
 async_session_factory: async_sessionmaker[AsyncSession] = async_sessionmaker(
