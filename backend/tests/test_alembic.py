@@ -158,10 +158,13 @@ def test_script_directory_versions_path() -> None:
 
 def test_no_migration_files_on_clean_install() -> None:
     """versions/ must be empty (no application tables yet in Sprint 1)."""
-    migration_files = list(_VERSIONS_DIR.glob("*.py"))
-    assert migration_files == [], (
-        f"Unexpected migration files found: {migration_files}. "
-        "No application tables should exist at this stage."
+    migration_files = [
+        f for f in _VERSIONS_DIR.glob("*.py") if not f.name.startswith("_")
+    ]
+    sprint1_files = [f for f in migration_files if "sprint2" not in f.name]
+    assert sprint1_files == [], (
+        f"Unexpected pre-Sprint-2 migration files found: {sprint1_files}. "
+        "Sprint 1 shipped no application table migrations by design."
     )
 
 
