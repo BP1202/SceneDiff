@@ -37,9 +37,10 @@ if config.config_file_name is not None:
 # Add new model modules here as they are created in Sprint 2+.
 # ---------------------------------------------------------------------------
 from app.db.base import Base  # noqa: E402  (must come after Alembic imports)
+from app.models.trace_event import TraceEvent  # noqa: E402, F401
 
-# Future model imports go here, e.g.:
-# from app.models.session import Session  # noqa: E402
+# Sprint 2 models — import so autogenerate picks up the tables.
+from app.models.trace_session import TraceSession  # noqa: E402, F401
 
 target_metadata = Base.metadata
 
