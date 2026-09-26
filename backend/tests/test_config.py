@@ -4,6 +4,7 @@ Each test that constructs a Settings instance directly (not via get_settings)
 passes all required fields explicitly so the tests are self-contained and
 never depend on the process environment or a .env file.
 """
+
 from pydantic import ValidationError
 import pytest
 
@@ -223,9 +224,7 @@ def test_is_production_true_for_production() -> None:
 
 def test_get_settings_returns_same_instance(monkeypatch: pytest.MonkeyPatch) -> None:
     """get_settings() must return the identical object on repeated calls."""
-    monkeypatch.setenv(
-        "DATABASE_URL", "postgresql+asyncpg://u:p@localhost:5432/test"
-    )
+    monkeypatch.setenv("DATABASE_URL", "postgresql+asyncpg://u:p@localhost:5432/test")
     get_settings.cache_clear()
     try:
         first = get_settings()
@@ -239,9 +238,7 @@ def test_get_settings_cache_clear_produces_new_instance(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     """After cache_clear, get_settings() must return a fresh instance."""
-    monkeypatch.setenv(
-        "DATABASE_URL", "postgresql+asyncpg://u:p@localhost:5432/test"
-    )
+    monkeypatch.setenv("DATABASE_URL", "postgresql+asyncpg://u:p@localhost:5432/test")
     get_settings.cache_clear()
     try:
         first = get_settings()

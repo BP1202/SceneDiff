@@ -17,6 +17,7 @@ Design notes
   real connections until the first query is executed.  Importing this module
   in tests does not require a running PostgreSQL server.
 """
+
 from collections.abc import AsyncGenerator
 
 from sqlalchemy.ext.asyncio import (

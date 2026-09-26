@@ -3,6 +3,7 @@
 Configures the stdlib logging module with a JSON formatter so every log
 line is machine-parseable.  No third-party logging framework required.
 """
+
 import json
 import logging
 import time

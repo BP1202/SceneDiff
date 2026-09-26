@@ -10,6 +10,7 @@ Settings groups:
     PostgreSQL   — async database connection
     Secret Shield — trace privacy and masking behaviour
 """
+
 from functools import lru_cache
 from typing import Literal
 
@@ -106,8 +107,7 @@ class Settings(BaseSettings):
     SECRET_SHIELD_ENABLED: bool = Field(
         default=True,
         description=(
-            "Master switch for Secret Shield. "
-            "Must be True in staging and production."
+            "Master switch for Secret Shield. Must be True in staging and production."
         ),
     )
     SECRET_SHIELD_BLOCK_ON_DETECT: bool = Field(

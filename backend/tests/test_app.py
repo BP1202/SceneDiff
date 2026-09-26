@@ -1,4 +1,5 @@
 """Smoke test — verifies the FastAPI app instantiates and responds."""
+
 from httpx import AsyncClient
 import pytest
 

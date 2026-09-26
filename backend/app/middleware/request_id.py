@@ -3,6 +3,7 @@
 Injects a unique X-Request-ID into every request/response cycle.
 If the client already provides the header its value is preserved.
 """
+
 from collections.abc import Callable
 from typing import Any
 import uuid

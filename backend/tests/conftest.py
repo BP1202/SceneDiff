@@ -3,6 +3,8 @@
 DATABASE_URL is set via os.environ before any app module is imported so that
 pydantic-settings can resolve the required field without a real database.
 """
+
+from collections.abc import AsyncGenerator
 import os
 
 # Must be set before app modules are imported — pydantic-settings reads env at
@@ -19,9 +21,9 @@ from app.main import app  # noqa: E402
 
 
 @pytest.fixture()
-async def async_client() -> AsyncClient:
+async def async_client() -> AsyncGenerator[AsyncClient, None]:
     """Return an HTTPX async client bound to the FastAPI ASGI app."""
     async with AsyncClient(
         transport=ASGITransport(app=app), base_url="http://test"
     ) as client:
-        yield client  # type: ignore[misc]
+        yield client

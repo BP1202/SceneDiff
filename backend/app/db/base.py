@@ -2,6 +2,7 @@
 
 All ORM models must inherit from Base.
 """
+
 from sqlalchemy.orm import DeclarativeBase
 
 

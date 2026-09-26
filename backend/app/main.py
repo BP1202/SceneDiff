@@ -8,6 +8,7 @@ Responsibilities:
 
 No business logic lives here.
 """
+
 from collections.abc import AsyncGenerator
 from contextlib import asynccontextmanager
 

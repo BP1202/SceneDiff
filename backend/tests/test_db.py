@@ -4,6 +4,7 @@ All tests work against the SQLAlchemy API only — no real PostgreSQL instance
 is required.  create_async_engine() configures the pool but never opens a
 socket until the first query, so these tests run entirely in-process.
 """
+
 import contextlib
 from unittest.mock import AsyncMock, MagicMock, patch
 
