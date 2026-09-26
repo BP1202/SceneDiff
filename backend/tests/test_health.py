@@ -1,30 +1,11 @@
 """Tests for GET /api/v1/health — Database health endpoint (Sprint 1, Task 06)."""
 
-from collections.abc import AsyncGenerator, Generator
 from datetime import datetime
-from unittest.mock import AsyncMock, MagicMock
+from unittest.mock import AsyncMock
 
 from httpx import AsyncClient
 import pytest
 from sqlalchemy.exc import OperationalError, SQLAlchemyError
-from sqlalchemy.ext.asyncio import AsyncSession
-
-from app.db.session import get_db
-from app.main import app
-
-
-@pytest.fixture(autouse=True)
-def mock_db() -> Generator[AsyncMock, None, None]:
-    """Provide a mock AsyncSession for get_db dependency in all health tests."""
-    mock_session = AsyncMock(spec=AsyncSession)
-    mock_session.execute = AsyncMock(return_value=MagicMock())
-
-    async def _override_get_db() -> AsyncGenerator[AsyncMock, None]:
-        yield mock_session
-
-    app.dependency_overrides[get_db] = _override_get_db
-    yield mock_session
-    app.dependency_overrides.pop(get_db, None)
 
 
 @pytest.mark.asyncio()

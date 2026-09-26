@@ -3,7 +3,8 @@
 Responsibilities:
 - Create the FastAPI application instance via the factory function.
 - Register versioned API routers.
-- Attach middleware (CORS, RequestID).
+- Attach middleware (CORS, Logging, RequestID).
+- Register global exception handlers for standardized error envelopes.
 - Configure lifespan startup / shutdown hooks.
 
 No business logic lives here.
@@ -17,7 +18,9 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.router import router as api_router
 from app.core.config import get_settings
+from app.core.exceptions import register_exception_handlers
 from app.core.logging import configure_logging
+from app.middleware.logging import LoggingMiddleware
 from app.middleware.request_id import RequestIDMiddleware
 
 
@@ -44,8 +47,11 @@ def create_app() -> FastAPI:
         redoc_url="/redoc" if settings.DOCS_ENABLED else None,
     )
 
-    # --- Middleware (outermost first) ----------------------------------------
-    # CORS must be added before RequestID so it applies to preflight responses.
+    # --- Exception Handlers --------------------------------------------------
+    register_exception_handlers(application)
+
+    # --- Middleware (Starlette executes in reverse order of addition) ---------
+    # Request flow: RequestID -> Logging -> CORS -> Router
     application.add_middleware(
         CORSMiddleware,
         allow_origins=settings.allowed_origins_list,
@@ -53,9 +59,10 @@ def create_app() -> FastAPI:
         allow_methods=["*"],
         allow_headers=["*"],
     )
+    application.add_middleware(LoggingMiddleware)
     application.add_middleware(RequestIDMiddleware)
 
-    # --- Routers ---------------------------------------------------------------
+    # --- Routers -------------------------------------------------------------
     application.include_router(api_router)
 
     return application
