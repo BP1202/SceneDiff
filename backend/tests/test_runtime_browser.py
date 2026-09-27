@@ -24,7 +24,9 @@ class TestLaunchBrowser:
         async def _mock_playwright():
             yield mock_pw
 
-        with patch("playwright.async_api.async_playwright", side_effect=_mock_playwright):
+        with patch(
+            "playwright.async_api.async_playwright", side_effect=_mock_playwright
+        ):
             async with launch_browser() as browser:
                 assert browser is mock_browser
                 mock_pw.chromium.launch.assert_awaited_once_with(
@@ -50,7 +52,9 @@ class TestLaunchBrowser:
             yield mock_pw
 
         with (
-            patch("playwright.async_api.async_playwright", side_effect=_mock_playwright),
+            patch(
+                "playwright.async_api.async_playwright", side_effect=_mock_playwright
+            ),
             pytest.raises(RuntimeError, match="test error"),
         ):
             async with launch_browser():

@@ -22,7 +22,7 @@ import logging
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from playwright.async_api import Browser, BrowserContext, Page
+    from playwright.async_api import Browser, BrowserContext, Page, ViewportSize
 
 logger = logging.getLogger(__name__)
 
@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 # Browser configuration constants
 # ---------------------------------------------------------------------------
 
-_VIEWPORT = {"width": 1280, "height": 720}
+_VIEWPORT: ViewportSize = {"width": 1280, "height": 720}
 _TIMEOUT_MS = 30_000  # 30 s default navigation timeout
 
 _DENIED_PERMISSIONS: list[str] = [
