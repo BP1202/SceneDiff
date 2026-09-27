@@ -16,6 +16,7 @@ dependencies = [
     "pydantic>=2.7.0",
     "pydantic-settings>=2.3.0",
     "python-dotenv>=1.0.0",
+    "playwright>=1.44.0",
 ]
 
 [project.optional-dependencies]
@@ -87,6 +88,10 @@ no_implicit_optional = true
 warn_redundant_casts = true
 warn_unused_ignores = true
 exclude = ["alembic/"]
+
+[[tool.mypy.overrides]]
+module = ["playwright.*"]
+ignore_missing_imports = true
 
 # ---------------------------------------------------------------------------
 # Pytest

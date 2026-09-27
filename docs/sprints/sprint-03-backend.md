@@ -1,8 +1,8 @@
 # Sprint 3 — Runtime Trace Collector & Playwright Engine
 
-**Status:** 🔲 Planned  
+**Status:** ✅ Complete  
 **Depends on:** Sprint 2 (Behavior Trace Engine) ✅  
-**Branch:** `feat/sprint-3-runtime-trace-collector`
+**Branch:** `feat/runtime-trace-collector`
 
 > **Mission:** Execute two versions of an application (Base Commit vs Head Commit), collect runtime evidence from both executions, normalize it into trace artifacts, and feed it into the Sprint 2 Behavior Engine.
 
