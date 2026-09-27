@@ -64,8 +64,9 @@ class TestSprint4MigrationStructure:
         assert "comparison_events" in source
         assert "comparisonstatus" in source
 
-    def test_alembic_script_directory_resolves_0002_head(self) -> None:
+    def test_alembic_script_directory_resolves_0002(self) -> None:
         config = Config(str(_ALEMBIC_INI))
         scripts = ScriptDirectory.from_config(config)
-        heads = scripts.get_heads()
-        assert "0002" in heads
+        rev = scripts.get_revision("0002")
+        assert rev is not None
+        assert rev.down_revision == "0001"
