@@ -1,0 +1,166 @@
+.sd-top-navbar {
+  height: 60px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  gap: 16px;
+}
+
+.sd-top-navbar__left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sd-top-navbar__repo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.sd-top-navbar__repo-badge:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-strong);
+}
+
+.sd-top-navbar__repo-icon {
+  color: var(--cyan-accent);
+}
+
+.sd-top-navbar__branch-tag {
+  font-size: 0.6875rem;
+  padding: 1px 6px;
+  background: var(--primary-muted);
+  color: #78a9ff;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+}
+
+.sd-top-navbar__commits {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-card);
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle);
+}
+
+.sd-top-navbar__commit-pill {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sd-top-navbar__commit-pill.is-head code {
+  color: var(--cyan-accent);
+}
+
+.sd-top-navbar__commit-prefix {
+  font-weight: 700;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+.sd-top-navbar__commit-arrow {
+  color: var(--text-muted);
+}
+
+.sd-top-navbar__center {
+  flex: 1;
+  max-width: 480px;
+}
+
+.sd-top-navbar__search-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  font-family: var(--font-sans);
+  padding: 7px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.sd-top-navbar__search-trigger:hover {
+  border-color: var(--border-strong);
+  color: var(--text-secondary);
+  background: var(--bg-card-hover);
+}
+
+.sd-top-navbar__kbd {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  padding: 1px 6px;
+  border-radius: 4px;
+  color: var(--text-secondary);
+}
+
+.sd-top-navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sd-top-navbar__health {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.sd-top-navbar__health.is-healthy {
+  background: rgba(36, 161, 72, 0.12);
+  color: var(--success);
+  border: 1px solid rgba(36, 161, 72, 0.3);
+}
+.sd-top-navbar__health.is-unhealthy {
+  background: rgba(218, 30, 40, 0.12);
+  color: var(--severity-critical);
+  border: 1px solid rgba(218, 30, 40, 0.3);
+}
+
+.sd-top-navbar__drawer-toggle {
+  background: transparent;
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+.sd-top-navbar__drawer-toggle:hover,
+.sd-top-navbar__drawer-toggle.is-active {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}

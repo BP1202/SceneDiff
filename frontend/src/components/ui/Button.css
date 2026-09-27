@@ -1,0 +1,116 @@
+.sd-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  border: 1px solid transparent;
+  outline: none;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.sd-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Sizes */
+.sd-button--sm {
+  height: 28px;
+  padding: 0 10px;
+  font-size: 0.75rem;
+  gap: 6px;
+}
+
+.sd-button--md {
+  height: 36px;
+  padding: 0 14px;
+  font-size: 0.875rem;
+  gap: 8px;
+}
+
+.sd-button--lg {
+  height: 44px;
+  padding: 0 20px;
+  font-size: 1rem;
+  gap: 10px;
+}
+
+/* Variants */
+.sd-button--primary {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+.sd-button--primary:hover:not(:disabled) {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+  box-shadow: 0 0 16px rgba(15, 98, 254, 0.4);
+}
+
+.sd-button--cyan {
+  background: var(--cyan-accent);
+  color: #07090e;
+  border-color: var(--cyan-accent);
+  font-weight: 600;
+}
+.sd-button--cyan:hover:not(:disabled) {
+  background: #00b4d8;
+  box-shadow: 0 0 16px rgba(17, 203, 239, 0.5);
+}
+
+.sd-button--secondary {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border-color: var(--border-default);
+}
+.sd-button--secondary:hover:not(:disabled) {
+  background: var(--bg-card-hover);
+  border-color: var(--border-strong);
+}
+
+.sd-button--outline {
+  background: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+.sd-button--outline:hover:not(:disabled) {
+  background: var(--bg-card);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+.sd-button--danger {
+  background: var(--severity-critical);
+  color: #ffffff;
+  border-color: var(--severity-critical);
+}
+.sd-button--danger:hover:not(:disabled) {
+  background: #ba1b23;
+  box-shadow: 0 0 16px rgba(218, 30, 40, 0.4);
+}
+
+.sd-button--ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border-color: transparent;
+}
+.sd-button--ghost:hover:not(:disabled) {
+  background: var(--primary-muted);
+  color: var(--text-primary);
+}
+
+.sd-button__spinner {
+  margin-right: 2px;
+}
+
+.sd-button__icon-left,
+.sd-button__icon-right {
+  display: inline-flex;
+  align-items: center;
+}

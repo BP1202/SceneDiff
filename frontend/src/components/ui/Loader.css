@@ -1,0 +1,24 @@
+.sd-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  color: var(--primary);
+}
+
+.sd-loader.is-full-height {
+  min-height: 240px;
+  height: 100%;
+}
+
+.sd-loader__spinner {
+  color: var(--cyan-accent);
+}
+
+.sd-loader__label {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}

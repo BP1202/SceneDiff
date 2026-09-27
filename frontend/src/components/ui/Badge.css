@@ -1,0 +1,77 @@
+.sd-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  border-radius: 4px;
+  line-height: 1;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  transition: all 0.15s ease;
+}
+
+.sd-badge--sm {
+  padding: 3px 6px;
+  font-size: 0.6875rem; /* 11px */
+  gap: 4px;
+}
+
+.sd-badge--md {
+  padding: 4px 8px;
+  font-size: 0.75rem; /* 12px */
+  gap: 6px;
+}
+
+.sd-badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: currentColor;
+}
+
+/* Severities */
+.sd-badge--critical {
+  background: var(--severity-critical-bg);
+  color: var(--severity-critical);
+  border: 1px solid rgba(218, 30, 40, 0.4);
+}
+.sd-badge--critical.is-glowing {
+  box-shadow: 0 0 10px rgba(218, 30, 40, 0.35);
+}
+
+.sd-badge--high {
+  background: var(--severity-high-bg);
+  color: var(--severity-high);
+  border: 1px solid rgba(255, 131, 43, 0.4);
+}
+
+.sd-badge--medium {
+  background: var(--severity-medium-bg);
+  color: var(--severity-medium);
+  border: 1px solid rgba(241, 194, 27, 0.4);
+}
+
+.sd-badge--low {
+  background: var(--severity-low-bg);
+  color: var(--severity-low);
+  border: 1px solid rgba(69, 137, 255, 0.4);
+}
+
+.sd-badge--info {
+  background: var(--severity-info-bg);
+  color: var(--severity-info);
+  border: 1px solid rgba(138, 63, 252, 0.4);
+}
+
+.sd-badge--success {
+  background: var(--success-bg);
+  color: var(--success);
+  border: 1px solid rgba(36, 161, 72, 0.4);
+}
+
+.sd-badge--default {
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-default);
+}

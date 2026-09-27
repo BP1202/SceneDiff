@@ -1,0 +1,167 @@
+.sd-runtime-collector {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sd-runtime-collector__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sd-runtime-collector__metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.sd-runtime-collector__stepper-card {
+  padding: 4px;
+}
+
+.sd-runtime-collector__stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.sd-runtime-stepper__step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  transition: all 0.2s ease;
+}
+
+.sd-runtime-stepper__step.is-active {
+  color: var(--text-primary);
+}
+
+.sd-runtime-stepper__icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.sd-runtime-stepper__step.is-active .sd-runtime-stepper__icon {
+  border-color: var(--cyan-accent);
+  color: var(--cyan-accent);
+  box-shadow: 0 0 10px rgba(17, 203, 239, 0.4);
+}
+
+.sd-runtime-stepper__step.is-done .sd-runtime-stepper__icon {
+  border-color: var(--success);
+  color: var(--success);
+  background: rgba(36, 161, 72, 0.15);
+}
+
+.sd-runtime-collector__terminal-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.sd-runtime-collector__terminal-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sd-runtime-collector__shield-tag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--success);
+  background: rgba(36, 161, 72, 0.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(36, 161, 72, 0.3);
+}
+
+.sd-runtime-collector__select {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.sd-runtime-collector__terminal-body {
+  padding: 0;
+}
+
+.sd-runtime-terminal {
+  background: #06080d;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  padding: 14px;
+  border-radius: 0 0 8px 8px;
+  max-height: 380px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sd-runtime-terminal__row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.sd-runtime-terminal__time {
+  color: var(--text-muted);
+}
+
+.sd-runtime-terminal__badge {
+  font-size: 0.625rem;
+  font-weight: 700;
+  padding: 1px 4px;
+  border-radius: 3px;
+  line-height: 1;
+}
+
+.sd-runtime-terminal__badge.is-info {
+  background: rgba(69, 137, 255, 0.15);
+  color: #78a9ff;
+}
+.sd-runtime-terminal__badge.is-warn {
+  background: rgba(241, 194, 27, 0.15);
+  color: #f1c21b;
+}
+.sd-runtime-terminal__badge.is-error {
+  background: rgba(218, 30, 40, 0.2);
+  color: #ff8389;
+}
+.sd-runtime-terminal__badge.is-debug {
+  background: rgba(138, 63, 252, 0.15);
+  color: #be95ff;
+}
+
+.sd-runtime-terminal__phase {
+  color: var(--cyan-accent);
+}
+
+.sd-runtime-terminal__msg {
+  color: var(--text-primary);
+  word-break: break-all;
+}
+
+.sd-runtime-terminal__row.is-error .sd-runtime-terminal__msg {
+  color: #ff8389;
+}
