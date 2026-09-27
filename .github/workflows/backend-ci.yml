@@ -22,9 +22,9 @@ jobs:
       postgres:
         image: postgres:17-alpine
         env:
-          POSTGRES_DB: ${POSTGRES_DB}
-          POSTGRES_USER: ${POSTGRES_USER}
-          POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+          POSTGRES_DB: scenediff_test
+          POSTGRES_USER: scenediff_test
+          POSTGRES_PASSWORD: changeme
         ports:
           - 5432:5432
         options: >-
@@ -59,7 +59,7 @@ jobs:
 
       - name: Run MyPy Strict Type Checking
         working-directory: ./backend
-        run: mypy .
+        run: mypy app/
 
       - name: Run Pytest Test Suite
         working-directory: ./backend
