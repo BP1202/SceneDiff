@@ -163,7 +163,7 @@ cp .env.example .env
 Edit `backend/.env`:
 
 ```env
-DATABASE_URL=postgresql+asyncpg://scenediff:scenediff@localhost:5432/scenediff
+DATABASE_URL=
 APP_ENV=development
 DOCS_ENABLED=true
 SECRET_SHIELD_ENABLED=true
@@ -308,7 +308,7 @@ Automatic secret detection and masking before any trace is persisted:
 | Sprint 5 | Root Cause Analysis Engine (causal timeline, confidence) | ✅ Complete |
 | Sprint 6 | IBM Bob AI Repair Engine (patch gen, risk, rollback) | ✅ Complete |
 | Sprint 7 | Frontend AI Workspace (React + TypeScript dashboard) | ✅ Complete |
-| Sprint 8 | Deployment, demo assets, IBM submission | 🔄 In Progress |
+
 
 ---
 
