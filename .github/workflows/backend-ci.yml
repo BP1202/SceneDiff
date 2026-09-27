@@ -1,0 +1,84 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [main, dev, "feat/*"]
+    paths:
+      - "backend/**"
+      - "docker-compose.yml"
+      - ".github/workflows/backend-ci.yml"
+  pull_request:
+    branches: [main, dev]
+    paths:
+      - "backend/**"
+      - "docker-compose.yml"
+
+jobs:
+  quality-gate:
+    name: Lint, Type Check & Tests
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_DB: scenediff_test
+          POSTGRES_USER: scenediff_test
+          POSTGRES_PASSWORD: changeme
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Dependencies
+        working-directory: ./backend
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Run Ruff Lint
+        working-directory: ./backend
+        run: ruff check .
+
+      - name: Run Ruff Format Verification
+        working-directory: ./backend
+        run: ruff format --check .
+
+      - name: Run MyPy Strict Type Checking
+        working-directory: ./backend
+        run: mypy app/
+
+      - name: Run Pytest Test Suite
+        working-directory: ./backend
+        env:
+          DATABASE_URL: postgresql+asyncpg://scenediff_test:changeme@localhost:5432/scenediff_test
+          APP_ENV: development
+        run: pytest -v
+
+  docker-build:
+    name: Docker Runtime Validation
+    runs-on: ubuntu-latest
+    needs: quality-gate
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Validate Docker Compose Configuration
+        run: docker compose config
+
+      - name: Build Backend Container
+        run: docker compose build backend

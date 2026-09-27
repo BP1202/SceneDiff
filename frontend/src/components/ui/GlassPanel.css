@@ -1,0 +1,14 @@
+.sd-glass-panel {
+  background: var(--bg-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--bg-glass-border);
+  border-radius: 8px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.2s ease;
+}
+
+.sd-glass-panel.is-glowing {
+  box-shadow: 0 0 25px rgba(15, 98, 254, 0.25);
+  border-color: rgba(17, 203, 239, 0.35);
+}

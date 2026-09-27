@@ -1,0 +1,278 @@
+.sd-repair-studio {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sd-repair-studio__top-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sd-repair-bar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.sd-repair-target-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sd-repair-target-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.sd-repair-target-meta .label,
+.sd-repair-risk-info .label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.sd-repair-target-meta .file-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+.sd-repair-target-meta .func-name {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.sd-repair-risk-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.sd-repair-risk-score {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sd-repair-risk-score .score-val {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+.sd-repair-risk-reasons {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sd-risk-bullet {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.sd-repair-view-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sd-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.sd-view-btn:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+.sd-view-btn.is-active {
+  background: var(--primary-muted);
+  border-color: var(--primary);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.sd-diff-stats {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.sd-diff-viewer-body {
+  padding: 0;
+}
+
+.sd-diff-code-window {
+  background: #05070c;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  border-radius: 0 0 8px 8px;
+  max-height: 380px;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.sd-diff-line {
+  display: flex;
+  align-items: baseline;
+  padding: 2px 14px;
+}
+
+.sd-diff-line-num {
+  width: 40px;
+  color: var(--text-muted);
+  user-select: none;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.sd-diff-line-content {
+  color: var(--text-primary);
+  white-space: pre;
+}
+
+.sd-diff-line.is-add {
+  background: var(--diff-add-bg);
+}
+.sd-diff-line.is-add .sd-diff-line-content {
+  color: var(--diff-add-text);
+  font-weight: 500;
+}
+
+.sd-diff-line.is-del {
+  background: var(--diff-remove-bg);
+}
+.sd-diff-line.is-del .sd-diff-line-content {
+  color: var(--diff-remove-text);
+}
+
+.sd-diff-line.is-header {
+  background: rgba(15, 98, 254, 0.08);
+}
+.sd-diff-line.is-header .sd-diff-line-content {
+  color: #78a9ff;
+  font-weight: 600;
+}
+
+.sd-plan-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sd-plan-step-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  padding: 12px 16px;
+  border-radius: 6px;
+}
+
+.sd-plan-step-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--cyan-accent);
+  background: var(--cyan-muted);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+}
+
+.sd-plan-step-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.sd-plan-step-desc {
+  font-size: 0.84375rem;
+  color: var(--text-primary);
+}
+
+.sd-plan-step-type {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+.sd-repair-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.sd-safety-notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sd-safety-note-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: var(--text-primary);
+}
+
+.sd-rollback-procedures {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sd-rollback-cmd-box {
+  background: #06080d;
+  border: 1px solid var(--border-default);
+  padding: 10px 12px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sd-rollback-cmd-box .label {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.sd-rollback-cmd-box code {
+  color: var(--cyan-accent);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+}
+
+.sd-rollback-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}

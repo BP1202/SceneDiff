@@ -1,0 +1,45 @@
+# Environment
+.env
+.env.*
+*.local
+
+# Credentials
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Python
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+
+# Node
+node_modules/
+dist/
+build/
+
+# Coverage
+coverage/
+htmlcov/
+*.coverage
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# Generated Assets
+playwright-report/
+test-results/
+tmp/
+cache/
+
+# Database
+*.sqlite
+*.db
+
+# OS
+.DS_Store
+Thumbs.db

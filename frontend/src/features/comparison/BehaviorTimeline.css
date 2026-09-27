@@ -1,0 +1,308 @@
+.sd-timeline-viewer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sd-timeline__filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-card);
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border-default);
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.sd-timeline__filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sd-timeline__filter-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sd-timeline__filter-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sd-filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-family: var(--font-sans);
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.sd-filter-pill:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+.sd-filter-pill.is-active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+  font-weight: 600;
+}
+.sd-filter-pill.is-active.is-critical {
+  background: var(--severity-critical);
+  border-color: var(--severity-critical);
+}
+
+.sd-timeline__content-split {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 20px;
+  align-items: start;
+}
+
+.sd-timeline__stream {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.sd-timeline-node {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  cursor: pointer;
+}
+
+.sd-timeline-node__indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sd-timeline-node__dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 2px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  z-index: 2;
+  transition: all 0.2s ease;
+}
+
+.sd-timeline-node__dot.is-critical {
+  border-color: var(--severity-critical);
+  color: var(--severity-critical);
+  background: var(--severity-critical-bg);
+}
+.sd-timeline-node__dot.is-high {
+  border-color: var(--severity-high);
+  color: var(--severity-high);
+  background: var(--severity-high-bg);
+}
+.sd-timeline-node__dot.is-medium {
+  border-color: var(--severity-medium);
+  color: var(--severity-medium);
+}
+.sd-timeline-node__dot.is-low {
+  border-color: var(--severity-low);
+  color: var(--severity-low);
+}
+
+.sd-timeline-node.is-divergence .sd-timeline-node__dot {
+  box-shadow: 0 0 16px rgba(218, 30, 40, 0.6);
+  animation: pulseGlow 1.5s infinite ease-in-out;
+}
+
+.sd-timeline-node__line {
+  width: 2px;
+  background: var(--border-default);
+  flex: 1;
+  margin: 4px 0;
+  min-height: 24px;
+}
+
+.sd-timeline-node:last-child .sd-timeline-node__line {
+  display: none;
+}
+
+.sd-timeline-node__card {
+  flex: 1;
+  margin-bottom: 16px;
+  transition: all 0.2s ease;
+}
+.sd-timeline-node:hover .sd-timeline-node__card {
+  border-color: var(--border-strong);
+  transform: translateX(4px);
+}
+.sd-timeline-node.is-selected .sd-timeline-node__card {
+  border-color: var(--cyan-accent);
+  box-shadow: 0 0 16px rgba(17, 203, 239, 0.25);
+}
+
+.sd-timeline-node__card.glow-critical {
+  border-color: rgba(218, 30, 40, 0.5);
+  box-shadow: 0 0 20px rgba(218, 30, 40, 0.2);
+}
+
+.sd-timeline-node__header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.sd-timeline-node__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.75rem;
+}
+
+.sd-timeline-node__step {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.sd-timeline-node__time {
+  color: var(--text-muted);
+}
+
+.sd-timeline-node__route {
+  color: var(--cyan-accent);
+  font-family: var(--font-mono);
+}
+
+.sd-timeline-node__badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sd-timeline-node__title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.sd-timeline-node__desc {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+
+.sd-timeline-node__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 8px;
+}
+
+.sd-timeline-node__view-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--cyan-accent);
+  font-weight: 600;
+}
+
+/* Detail Pane */
+.sd-timeline__inspector-card {
+  position: sticky;
+  top: 80px;
+}
+
+.sd-timeline-inspector__content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sd-timeline-inspector__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.sd-timeline-inspector__desc {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.sd-timeline-inspector__meta-table {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--bg-card);
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-default);
+}
+
+.sd-inspector-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+}
+
+.sd-inspector-row .label {
+  color: var(--text-muted);
+}
+.sd-inspector-row .val {
+  color: var(--text-primary);
+}
+
+.sd-timeline-inspector__json-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sd-inspector-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.sd-inspector-pre {
+  background: #06080d;
+  border: 1px solid var(--border-default);
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: #78a9ff;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.sd-timeline-inspector__action-btn {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.text-cyan {
+  color: var(--cyan-accent);
+}

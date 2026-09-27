@@ -1,0 +1,152 @@
+.sd-network-inspector {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sd-filter-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.sd-filter-toggle:hover {
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+.sd-filter-toggle.is-active {
+  background: var(--severity-critical-bg);
+  color: var(--severity-critical);
+  border-color: rgba(218, 30, 40, 0.4);
+}
+
+.sd-network-table-wrapper {
+  overflow-x: auto;
+}
+
+.sd-network-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+  text-align: left;
+}
+
+.sd-network-table th {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sd-network-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+}
+
+.sd-network-table tr.is-regression-row td {
+  background: rgba(218, 30, 40, 0.04);
+}
+
+.sd-network-endpoint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sd-method-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+}
+.sd-method-badge.is-post {
+  background: rgba(15, 98, 254, 0.15);
+  color: #78a9ff;
+}
+.sd-method-badge.is-get {
+  background: rgba(36, 161, 72, 0.15);
+  color: var(--success);
+}
+
+.sd-network-url {
+  font-size: 0.8125rem;
+  color: var(--cyan-accent);
+}
+
+.sd-network-error-detail {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--severity-critical);
+  margin-top: 4px;
+}
+
+.sd-status-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+.sd-status-pill.is-200 {
+  background: var(--success-bg);
+  color: var(--success);
+}
+.sd-status-pill.is-500 {
+  background: var(--severity-critical-bg);
+  color: var(--severity-critical);
+  border: 1px solid rgba(218, 30, 40, 0.3);
+}
+
+.sd-latency-bar-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 140px;
+}
+
+.sd-latency-text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.sd-latency-meter {
+  height: 4px;
+  background: var(--bg-surface);
+  border-radius: 2px;
+  display: flex;
+  overflow: hidden;
+  gap: 2px;
+}
+
+.sd-latency-fill.is-base {
+  background: var(--primary);
+  height: 100%;
+}
+.sd-latency-fill.is-head {
+  background: var(--severity-critical);
+  height: 100%;
+}
+
+.text-critical {
+  color: var(--severity-critical);
+  font-weight: 700;
+}
