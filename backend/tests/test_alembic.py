@@ -161,7 +161,11 @@ def test_no_migration_files_on_clean_install() -> None:
     migration_files = [
         f for f in _VERSIONS_DIR.glob("*.py") if not f.name.startswith("_")
     ]
-    sprint1_files = [f for f in migration_files if "sprint2" not in f.name]
+    sprint1_files = [
+        f
+        for f in migration_files
+        if "sprint2" not in f.name and "sprint4" not in f.name
+    ]
     assert sprint1_files == [], (
         f"Unexpected pre-Sprint-2 migration files found: {sprint1_files}. "
         "Sprint 1 shipped no application table migrations by design."
