@@ -65,7 +65,6 @@ jobs:
         working-directory: ./backend
         env:
           DATABASE_URL: postgresql+asyncpg://scenediff_test:changeme@localhost:5432/scenediff_test
-          SECRET_SHIELD_ENABLED: "false"
           APP_ENV: development
         run: pytest -v
 
