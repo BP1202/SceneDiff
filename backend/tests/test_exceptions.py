@@ -2,7 +2,7 @@
 
 from datetime import datetime
 
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from httpx import AsyncClient
 from pydantic import BaseModel
 import pytest
@@ -36,6 +36,11 @@ async def _raise_domain_error() -> None:
 @_error_router.get("/unhandled-error")
 async def _raise_unhandled_error() -> None:
     raise RuntimeError("Internal crash with secret_key=abcdef123456")
+
+
+@_error_router.get("/forbidden")
+async def _raise_forbidden() -> None:
+    raise HTTPException(status_code=403, detail="Access denied by policy.")
 
 
 app.include_router(_error_router)
@@ -139,12 +144,6 @@ async def test_http_exception_403_forbidden(
     async_client: AsyncClient,
 ) -> None:
     """Explicit Starlette/FastAPI HTTPException must format with HTTPStatus name."""
-    from fastapi import HTTPException
-
-    @_error_router.get("/forbidden")
-    async def _raise_forbidden() -> None:
-        raise HTTPException(status_code=403, detail="Access denied by policy.")
-
     response = await async_client.get("/api/v1/test-errors/forbidden")
     assert response.status_code == 403
     body = response.json()

@@ -6,6 +6,7 @@ from app.api.v1.endpoints import (
     comparisons,
     events,
     health,
+    repairs,
     root_causes,
     runtime,
     traces,
@@ -18,3 +19,4 @@ router.include_router(events.router)
 router.include_router(runtime.router)
 router.include_router(comparisons.router)
 router.include_router(root_causes.router)
+router.include_router(repairs.router)

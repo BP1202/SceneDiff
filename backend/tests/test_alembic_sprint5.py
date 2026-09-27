@@ -65,11 +65,9 @@ class TestSprint5MigrationStructure:
         assert "analysisstatus" in source
         assert "confidence_level" in source
 
-    def test_alembic_script_directory_resolves_0003_head(self) -> None:
+    def test_alembic_script_directory_resolves_0003(self) -> None:
         config = Config(str(_ALEMBIC_INI))
         scripts = ScriptDirectory.from_config(config)
-        heads = scripts.get_heads()
-        assert "0003" in heads
         rev = scripts.get_revision("0003")
         assert rev is not None
         assert rev.down_revision == "0002"

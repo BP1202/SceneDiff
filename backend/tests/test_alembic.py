@@ -164,7 +164,7 @@ def test_no_migration_files_on_clean_install() -> None:
     sprint1_files = [
         f
         for f in migration_files
-        if not any(s in f.name for s in ("sprint2", "sprint4", "sprint5"))
+        if not any(s in f.name for s in ("sprint2", "sprint4", "sprint5", "sprint6"))
     ]
     assert sprint1_files == [], (
         f"Unexpected pre-Sprint-2 migration files found: {sprint1_files}. "
