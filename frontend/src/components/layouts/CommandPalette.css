@@ -1,0 +1,109 @@
+.sd-cmd-palette {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sd-cmd-palette__search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  padding: 10px 14px;
+  border-radius: 6px;
+}
+
+.sd-cmd-palette__search:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 10px rgba(15, 98, 254, 0.3);
+}
+
+.sd-cmd-palette__search-icon {
+  color: var(--cyan-accent);
+}
+
+.sd-cmd-palette__input {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  width: 100%;
+  outline: none;
+}
+
+.sd-cmd-palette__list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.sd-cmd-palette__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.1s ease;
+  width: 100%;
+}
+
+.sd-cmd-palette__item:hover {
+  background: var(--bg-card);
+  border-color: var(--border-subtle);
+}
+
+.sd-cmd-palette__item-icon {
+  color: var(--cyan-accent);
+  display: flex;
+  align-items: center;
+}
+
+.sd-cmd-palette__item-label {
+  flex: 1;
+}
+
+.sd-cmd-palette__item-cat {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  background: var(--bg-surface);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--border-default);
+}
+
+.sd-cmd-palette__empty {
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+}
+
+.sd-cmd-palette__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 10px;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+.sd-cmd-palette__footer kbd {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+}

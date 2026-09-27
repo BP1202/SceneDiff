@@ -1,0 +1,207 @@
+.sd-sidebar {
+  width: 240px;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border-default);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  user-select: none;
+}
+
+.sd-sidebar.is-collapsed {
+  width: 68px;
+}
+
+.sd-sidebar__brand {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+  height: 60px;
+}
+
+.sd-sidebar__logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--primary) 0%, #002d9c 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 15px rgba(15, 98, 254, 0.4);
+}
+
+.sd-sidebar__logo-icon {
+  color: #ffffff;
+}
+
+.sd-sidebar__status-dot {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cyan-accent);
+  border: 2px solid var(--bg-surface);
+  box-shadow: 0 0 6px var(--cyan-accent);
+}
+
+.sd-sidebar__brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.sd-sidebar__title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.sd-sidebar__version {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--cyan-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sd-sidebar__nav {
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.sd-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.84375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.sd-sidebar__item:hover {
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.sd-sidebar__item.is-active {
+  background: var(--primary-muted);
+  border-color: rgba(15, 98, 254, 0.3);
+  color: #ffffff;
+}
+
+.sd-sidebar__item.is-accent.is-active {
+  background: var(--cyan-muted);
+  border-color: rgba(17, 203, 239, 0.35);
+  color: var(--cyan-accent);
+}
+
+.sd-sidebar__item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+}
+
+.sd-sidebar__item-label {
+  flex: 1;
+  white-space: nowrap;
+}
+
+.sd-sidebar__item-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 10px;
+  line-height: 1;
+}
+
+.sd-sidebar__item-badge.is-critical {
+  background: var(--severity-critical-bg);
+  color: var(--severity-critical);
+  border: 1px solid rgba(218, 30, 40, 0.4);
+}
+
+.sd-sidebar__item-badge.is-high {
+  background: var(--severity-high-bg);
+  color: var(--severity-high);
+  border: 1px solid rgba(255, 131, 43, 0.4);
+}
+
+.sd-sidebar__shield {
+  margin: 12px;
+  padding: 10px;
+  background: rgba(36, 161, 72, 0.08);
+  border: 1px solid rgba(36, 161, 72, 0.25);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sd-sidebar__shield-icon {
+  color: var(--success);
+  flex-shrink: 0;
+}
+
+.sd-sidebar__shield-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.sd-sidebar__shield-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--success);
+}
+
+.sd-sidebar__shield-subtitle {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+.sd-sidebar__footer {
+  padding: 12px 16px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.sd-sidebar__collapse-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-family: var(--font-sans);
+  width: 100%;
+  padding: 6px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+.sd-sidebar__collapse-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-card);
+}

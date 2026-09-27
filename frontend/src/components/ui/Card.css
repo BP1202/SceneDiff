@@ -1,0 +1,68 @@
+.sd-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease-in-out;
+}
+
+.sd-card--glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--bg-glass-border);
+}
+
+.sd-card--interactive {
+  cursor: pointer;
+}
+.sd-card--interactive:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.sd-card--outline {
+  background: transparent;
+  border: 1px dashed var(--border-strong);
+}
+
+.sd-card.is-glowing {
+  box-shadow: 0 0 20px rgba(15, 98, 254, 0.2);
+  border-color: rgba(15, 98, 254, 0.4);
+}
+
+.sd-card__header {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sd-card__title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sd-card__content {
+  padding: 16px;
+  flex: 1;
+}
+
+.sd-card__footer {
+  padding: 12px 16px;
+  border-top: 1px solid var(--border-subtle);
+  background: rgba(11, 15, 23, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}

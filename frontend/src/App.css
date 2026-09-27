@@ -1,0 +1,17 @@
+.sd-comparison-view,
+.sd-rootcause-view {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sd-comparison-subtabs,
+.sd-rootcause-subtabs {
+  margin-bottom: 8px;
+}
+
+.sd-comparison-subcontent,
+.sd-rootcause-subcontent {
+  display: flex;
+  flex-direction: column;
+}

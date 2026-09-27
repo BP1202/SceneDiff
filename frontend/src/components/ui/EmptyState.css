@@ -1,0 +1,39 @@
+.sd-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  background: var(--bg-surface);
+  border: 1px dashed var(--border-default);
+  border-radius: 8px;
+}
+
+.sd-empty-state__icon {
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--border-default);
+}
+
+.sd-empty-state__title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.sd-empty-state__desc {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  max-width: 360px;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}

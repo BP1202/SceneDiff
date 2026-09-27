@@ -1,0 +1,86 @@
+.sd-performance-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sd-perf-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.sd-perf-bars-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sd-perf-bar-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sd-perf-bar-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sd-perf-metric-name {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+.sd-perf-metric-values {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+}
+
+.sd-perf-metric-values .val-base {
+  color: var(--text-secondary);
+}
+.sd-perf-metric-values .divider {
+  color: var(--text-muted);
+}
+.sd-perf-metric-values .val-head {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.sd-perf-metric-values .val-head.text-critical {
+  color: var(--severity-critical);
+}
+
+.sd-perf-bar-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sd-bar-track {
+  height: 6px;
+  background: var(--bg-surface);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.sd-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+.sd-bar-fill.is-base {
+  background: var(--primary);
+}
+.sd-bar-fill.is-normal {
+  background: var(--cyan-accent);
+}
+.sd-bar-fill.is-regressed {
+  background: var(--severity-critical);
+}
