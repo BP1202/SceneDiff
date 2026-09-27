@@ -34,3 +34,8 @@ cache/
 # Database
 *.sqlite
 *.db
+
+# Bob sessions and task exports
+bob-tasks*
+bob_sessions/*.json
+bob_sessions/*.md
